@@ -1,0 +1,6 @@
+{
+  "name": "ORMA — Bilingual Study Deck Engine",
+  "description": "Transform class notes into bilingual quizzes, flashcards, key terms, and spoken recaps in English and Malayalam using high-speed Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

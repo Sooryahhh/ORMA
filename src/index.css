@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ink: #000000;
+    --paper: #FFFFFF;
+    --paper-2: #EDEBE4;
+    --paper-bg: #F2F0E6;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-muted: #666666;
+    --magenta: #FF3D00;
+    --cyan: #0038FF;
+    --yellow: #FFE600;
+    --green: #00A651;
+    --display-font: "Archivo Black", system-ui, sans-serif;
+    --ui-font: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono-font: "Space Mono", ui-monospace, monospace;
+    --mal-font: "Baloo Chettan 2", "Noto Sans Malayalam", sans-serif;
+    --shadow-heavy: 6px 6px 0 var(--ink);
+    --shadow-md: 4px 4px 0 var(--ink);
+    --shadow-sm: 2px 2px 0 var(--ink);
+    --grid-line: rgba(0, 0, 0, 0.055);
+  }
+
+  :root[data-theme="dark"], html.dark {
+    --ink: #FFFFFF;
+    --paper: #161616;
+    --paper-2: #242424;
+    --paper-bg: #0D0D0D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E0E0E0;
+    --text-muted: #A0A0A0;
+    --magenta: #FF4D17;
+    --cyan: #4075FF;
+    --yellow: #FFE600;
+    --green: #00D664;
+    --shadow-heavy: 6px 6px 0 #FFFFFF;
+    --shadow-md: 4px 4px 0 #FFFFFF;
+    --shadow-sm: 2px 2px 0 #FFFFFF;
+    --grid-line: rgba(255, 255, 255, 0.07);
+  }
+
+  body {
+    font-family: var(--ui-font);
+    background:
+      repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 40px),
+      repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 40px),
+      var(--paper-bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+}
+
+.font-display {
+  font-family: var(--display-font);
+}
+
+.font-mono {
+  font-family: var(--mono-font);
+}
+
+.font-mal {
+  font-family: var(--mal-font);
+}
+
+/* Brutalist Panels & Buttons */
+.brutal-panel {
+  background: var(--paper);
+  color: var(--text-primary);
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow-heavy);
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brutal-btn {
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.brutal-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.brutal-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* 3D Flashcard Animation */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
